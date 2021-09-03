@@ -9,7 +9,7 @@ add_btn.addEventListener("click", (e) => {
     e.preventDefault();
     const nametext = input_name.value;
     const lnametext = input_lastname.value;
-    const phonetext = input_name.value;
+    const phonetext = input_phone.value;
     
     if (nametext !== "" & lnametext !== "" & phonetext !== ""){
         const ul2 = document.createElement("ul");
@@ -34,21 +34,21 @@ add_btn.addEventListener("click", (e) => {
         input_lastname.value = "";
         input_phone.value = "";
         const contacts = document.querySelectorAll("ul")
-        n_contacts.innerHTML = `Contact List (${contacts.length})`
+        n_contacts.innerHTML = `<i class="bi bi-book"></i> Contact List (${contacts.length})`
     }
 })
 
 function deleteContact (){
     const del_btn = document.createElement("button");
     del_btn.className= "del-btn btn btn-primary btn-lg btn-block";
-    del_btn.textContent = "X";
+    del_btn.innerHTML = `<i class="bi bi-person-x"></i> Remove Contact`;
 
     del_btn.addEventListener("click", (e)=>{
         e.preventDefault();
         const item = e.target.parentElement;
         ul.removeChild(item);
         const contacts = document.querySelectorAll("ul")
-        n_contacts.innerHTML = `Contact List (${contacts.length})`
+        n_contacts.innerHTML = `<i class="bi bi-book"></i> Contact List (${contacts.length})`
     })
     return del_btn;
 }
